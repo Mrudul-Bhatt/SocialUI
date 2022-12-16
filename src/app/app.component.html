@@ -1,1 +1,15 @@
-<h1>Social UI</h1>
+<app-nav></app-nav>
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+        <th>{{user.id}}</th>
+        <th>{{user.userName}}</th>
+    </tr>
+    </tbody>
+</table>
