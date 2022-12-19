@@ -1,15 +1,19 @@
 <app-nav></app-nav>
-<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+<!-- <div class="container">
+  <table class="table">
     <thead>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-    </tr>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+      </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let user of users">
-        <th>{{user.id}}</th>
-        <th>{{user.userName}}</th>
-    </tr>
+      <tr *ngFor="let user of users">
+        <th>{{ user.id }}</th>
+        <th>{{ user.userName }}</th>
+      </tr>
     </tbody>
-</table>
+  </table>
+</div> -->
+
+<router-outlet></router-outlet>
