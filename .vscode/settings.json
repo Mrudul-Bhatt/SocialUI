@@ -1,6 +1,6 @@
 {
   "editor.fontSize": 18,
-  "editor.fontFamily": "Cascadia Code",
+  "editor.fontFamily": "Consolas, 'Courier New', Monospace",
   "editor.autoClosingBrackets": "always",
   "editor.autoClosingQuotes": "always"
 }

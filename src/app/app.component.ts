@@ -1,10 +1,7 @@
-import {HttpClient} from '@angular/common/http';
-import {Component, OnInit} from '@angular/core';
-
-interface User {
-  id: number,
-  userName: string
-}
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { AccountService } from './services/account.service';
+import { User } from './models/user.model';
 
 @Component({
   selector: 'app-root',
@@ -12,24 +9,18 @@ interface User {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  users: User[] = [];
-
-  constructor(private http: HttpClient) {
-  }
+  constructor(private accountService: AccountService) {}
 
   ngOnInit(): void {
-    this.getUsers();
+    this.setCurrentUser();
   }
 
-  getUsers() {
-    this.http.get<User[]>("https://localhost:7044/api/Users").subscribe({
-      next: (response) => {
-        console.log(response);
-        this.users = response;
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
+  setCurrentUser() {
+    const userString = localStorage.getItem('user');
+    if (!userString) return;
+
+    const user: User = JSON.parse(userString);
+
+    this.accountService.setCurrentUser(user);
   }
 }
