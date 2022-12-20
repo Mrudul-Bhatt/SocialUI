@@ -14,14 +14,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MemberDetailsComponent } from './members/member-details/member-details.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
-import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './modules/shared.module';
+import { TestErrorComponent } from './errors/test-error/test-error.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
     MemberDetailsComponent,
     ListsComponent,
     MessagesComponent,
+    TestErrorComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -48,14 +49,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatOptionModule,
     MatButtonModule,
     HttpClientModule,
-    BsDropdownModule.forRoot(),
-    ToastrModule.forRoot({
-      timeOut: 3000,
-      positionClass: 'toast-top-right',
-      preventDuplicates: true,
-      easing: 'ease-in',
-      easeTime: 300,
-    }),
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
