@@ -2,5 +2,8 @@
   "editor.fontSize": 18,
   "editor.fontFamily": "Consolas, 'Courier New', Monospace",
   "editor.autoClosingBrackets": "always",
-  "editor.autoClosingQuotes": "always"
+  "editor.autoClosingQuotes": "always",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120
 }

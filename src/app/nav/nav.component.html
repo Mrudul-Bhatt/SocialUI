@@ -3,6 +3,10 @@
     <a class="navbar-brand" routerLink="/" routerLinkActive="active"
       >Social UI</a
     >
+    <a class="navbar-brand" routerLink="/errors" routerLinkActive="active"
+      >Test Errors</a
+    >
+
     <ul *ngIf="accountService.isLoggedIn$ | async" class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link px-2" routerLink="/members" routerLinkActive="active"

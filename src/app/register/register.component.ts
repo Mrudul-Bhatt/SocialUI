@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
     console.log(this.form.value);
 
     if (this.form.value.userName === '' || this.form.value.password === '') {
-      this.toastr.error('Please enter all fields');
+      this.toastr.error('Please enter all fields!');
       return;
     }
 
@@ -44,7 +44,8 @@ export class RegisterComponent implements OnInit {
       },
       error: (error) => {
         console.log(error);
-        this.toastr.error(error.error);
+        //handled in the interceptor
+        // this.toastr.error(error.error);
       },
     });
     // this.accountService.login(this.form.value);
