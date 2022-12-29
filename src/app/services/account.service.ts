@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { User } from '../models/user.model';
 import { BehaviorSubject, map, shareReplay, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +29,7 @@ export class AccountService {
     );
   }
 
-  baseUrl = 'https://localhost:7044/api/';
+  baseUrl = environment.apiUrl;
 
   // loginV1(model: any) {
   //   return this.http.post<User>(this.baseUrl + 'account/login', model).pipe(
